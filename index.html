@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>André da Empada — Empadas Artesanais, Lanches e Pastéis | Indaiatuba/SP</title>
+  
+  <meta name="description" content="Peça as autênticas empadas artesanais de Indaiatuba! Massa leve e crocante, 100% Catupiry Original, empadões família, pastéis, caldos quentes e lanches. Peça online!">
+  <meta name="keywords" content="André da Empada, Empada Indaiatuba, Cardápio André da Empada, Empadão, Lanches, Pastéis, Delivery Indaiatuba">
+  <meta name="author" content="André da Empada">
+  
+  <!-- Open Graph / WhatsApp Sharing -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://app.cardapioweb.com/andredaempada">
+  <meta property="og:title" content="André da Empada — Fala Comigo! As Melhores Empadas de Indaiatuba">
+  <meta property="og:description" content="Massa que derrete na boca, recheio farto e 100% Catupiry Original. Faça seu pedido online agora!">
+  <meta property="og:image" content="assets/branding/logo_master.png">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="favicon.png">
+
+  <!-- Google Fonts Preconnect -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- SEO Schema.org LocalBusiness / Restaurant -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FastFoodRestaurant",
+    "name": "André da Empada",
+    "image": "assets/branding/logo_master.png",
+    "@id": "https://app.cardapioweb.com/andredaempada",
+    "url": "https://app.cardapioweb.com/andredaempada",
+    "telephone": "+5519989490912",
+    "priceRange": "$$",
+    "servesCuisine": "Brasileira, Empadas Artesanais, Lanches, Salgados",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Av. Geraldo Hackmann, 742",
+      "addressLocality": "Indaiatuba",
+      "addressRegion": "SP",
+      "postalCode": "13340-000",
+      "addressCountry": "BR"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": -23.0903,
+      "longitude": -47.2181
+    },
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+        "opens": "18:00",
+        "closes": "23:30"
+      }
+    ],
+    "hasMenu": "https://app.cardapioweb.com/andredaempada"
+  }
+  </script>
+</head>
+<body>
+
+  <!-- Top Announcement Bar -->
+  <div class="top-bar">
+    <div class="top-bar-container">
+      <div style="display:flex; align-items:center; gap:16px;">
+        <span class="status-pill" id="status-pill">
+          <span class="status-dot"></span>
+          <span>Verificando horário...</span>
+        </span>
+        <span style="display:inline-flex; align-items:center; gap:6px;">
+          📍 Av. Geraldo Hackmann, 742 • Faria Lima, Indaiatuba/SP
+        </span>
+      </div>
+      <div style="display:flex; align-items:center; gap:14px;">
+        <a href="tel:+5519989490912" style="font-weight:700; color:var(--color-primary-yellow);">📞 (19) 98949-0912</a>
+        <span>•</span>
+        <span style="color:var(--color-primary-yellow);">Cupom <strong>FALACOMIGO</strong> para R$ 5 OFF</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Navigation Header -->
+  <header class="header-nav">
+    <div class="header-container">
+      <a href="#" class="brand-lockup" aria-label="André da Empada Página Inicial">
+        <img src="assets/branding/stamp_andre_yellow.png" alt="Mascote André da Empada" class="brand-logo-img">
+        <div class="brand-name">
+          ANDRÉ da EMPADA
+          <span class="sub">Fala Comigo! • Feita pra Você</span>
+        </div>
+      </a>
+
+      <nav class="nav-links" aria-label="Navegação Principal">
+        <a href="#catalog-section" class="nav-link active">Cardápio</a>
+        <a href="#combos-section" class="nav-link">Combos</a>
+        <a href="#sobre-section" class="nav-link">Nossa História</a>
+        <a href="#avaliacoes-section" class="nav-link">Avaliações</a>
+        <a href="#contato-section" class="nav-link">Onde Estamos</a>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="btn-cart-trigger" id="btn-cart-nav" aria-label="Abrir Carrinho de Compras">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="9" cy="21" r="1"></circle>
+            <circle cx="20" cy="21" r="1"></circle>
+            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+          </svg>
+          <span id="cart-nav-total">R$ 0,00</span>
+          <span class="cart-badge" id="cart-badge">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="hero-container">
+      <div class="hero-content">
+        <div class="speech-bubble">
+          <span>👋</span> Fala Comigo! O melhor de Indaiatuba
+        </div>
+        <h1 class="hero-title">
+          A autêntica empada artesanal que conquistou <span class="highlight">Indaiatuba!</span>
+        </h1>
+        <p class="hero-description">
+          Receita familiar exclusiva de massa crocante que derrete na boca, recheio ultra generoso e <strong>100% Catupiry Original</strong>. Do clássico camarão aos empadões família, feita quentinha pra você!
+        </p>
+        <div class="hero-ctas">
+          <a href="#catalog-section" class="btn-primary">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"></path>
+              <path d="M3 6h18"></path>
+              <path d="M16 10a4 4 0 0 1-8 0"></path>
+            </svg>
+            Ver Cardápio & Fazer Pedido
+          </a>
+          <a href="https://wa.me/5519989490912?text=Ol%C3%A1%2C%20Andr%C3%A9!%20Vi%20o%20site%20e%20gostaria%20de%20fazer%20um%20pedido%20direto.%20Fala%20comigo!" target="_blank" rel="noopener noreferrer" class="btn-whatsapp">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+            </svg>
+            Pedir no WhatsApp
+          </a>
+        </div>
+        <div class="trust-badges">
+          <div class="trust-badge-item">
+            <span class="trust-icon">❤️</span>
+            <span>Feito com Amor</span>
+          </div>
+          <div class="trust-badge-item">
+            <span class="trust-icon">🌿</span>
+            <span>Ingredientes Selecionados</span>
+          </div>
+          <div class="trust-badge-item">
+            <span class="trust-icon">♨️</span>
+            <span>Sempre Quentinha</span>
+          </div>
+          <div class="trust-badge-item">
+            <span class="trust-icon">😊</span>
+            <span>Sabor Que Aconchega</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-visual-col">
+        <div class="hero-visual-card">
+          <img src="assets/branding/juicy_empada_cut.png" alt="Empada de Frango com Catupiry Original e Recheio Farto" class="hero-main-img">
+          <img src="assets/branding/stamp_fala_comigo.png" alt="Selo Oficial Fala Comigo" class="floating-stamp">
+          <div class="floating-review-badge">
+            <div class="stars-row">★★★★★</div>
+            <div>
+              <div style="font-weight:800; font-size:0.9rem; color:var(--color-primary-burgundy);">4.9 no Google</div>
+              <div style="font-size:0.75rem; color:var(--color-text-muted);">+450 clientes apaixonados</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Combos & Destaques Section -->
+  <section class="combos-banner-section" id="combos-section">
+    <div style="text-align:center; margin-bottom: 24px;">
+      <h2 style="font-size: 2.2rem; margin-bottom: 6px;">Combos da Casa & Empadões</h2>
+      <p style="color:var(--color-text-muted); font-size:1.05rem;">Economize e reúna a família com as combinações mais pedidas do André</p>
+    </div>
+
+    <div class="combos-grid">
+      <!-- Combo Família -->
+      <div class="combo-promo-card">
+        <div class="combo-badge-ribbon">Mais Econômico</div>
+        <div>
+          <h3 class="combo-title">Combo Família (Serve até 4 pessoas)</h3>
+          <p style="color:var(--color-text-muted); font-size:0.88rem;">Uma refeição completa com hambúrguer artesanal de 200g, batata quentinha e refrigerante gelado.</p>
+          <ul class="combo-items-list">
+            <li>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span><strong>04 Lanches Artesanais</strong> (X-Burguer ou X-Salada 200g)</span>
+            </li>
+            <li>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span><strong>01 Batata Média</strong> coberta com Catupiry/Cheddar e Bacon</span>
+            </li>
+            <li>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span><strong>01 Refrigerante 2 Litros</strong> (Coca-Cola ou Sprite)</span>
+            </li>
+          </ul>
+        </div>
+        <div class="combo-footer">
+          <div>
+            <div style="font-size:0.75rem; color:var(--color-text-light); text-decoration:line-through;">De R$ 178,00</div>
+            <div class="combo-price">R$ 158,00</div>
+          </div>
+          <button class="btn-primary btn-add-item" data-name="Combo Família" data-cat="Combos" style="padding:10px 20px; font-size:0.95rem;">
+            Pedir Combo +
+          </button>
+        </div>
+      </div>
+
+      <!-- Combo Casal -->
+      <div class="combo-promo-card">
+        <div class="combo-badge-ribbon" style="background:var(--color-accent-orange);">Queridinho</div>
+        <div>
+          <h3 class="combo-title">Combo Casal (Perfeito a Dois)</h3>
+          <p style="color:var(--color-text-muted); font-size:0.88rem;">Combinação sob medida para quem quer comer bem sem complicação.</p>
+          <ul class="combo-items-list">
+            <li>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span><strong>02 Lanches Artesanais</strong> (X-Burguer ou X-Salada 200g)</span>
+            </li>
+            <li>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span><strong>01 Batata Pequena</strong> com Catupiry/Cheddar e Bacon</span>
+            </li>
+            <li>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span><strong>01 Coca-Cola 600ml</strong> geladinha</span>
+            </li>
+          </ul>
+        </div>
+        <div class="combo-footer">
+          <div>
+            <div style="font-size:0.75rem; color:var(--color-text-light); text-decoration:line-through;">De R$ 94,00</div>
+            <div class="combo-price">R$ 83,00</div>
+          </div>
+          <button class="btn-primary btn-add-item" data-name="Combo Casal" data-cat="Combos" style="padding:10px 20px; font-size:0.95rem;">
+            Pedir Combo +
+          </button>
+        </div>
+      </div>
+
+      <!-- Empadões Família -->
+      <div class="combo-promo-card" style="border-color:var(--color-primary-burgundy);">
+        <div class="combo-badge-ribbon" style="background:var(--color-crust-gold);">Até 22h</div>
+        <div>
+          <h3 class="combo-title">Empadão Família (Serve 2 a 3 pessoas)</h3>
+          <p style="color:var(--color-text-muted); font-size:0.88rem;">Uma torta generosa de empada recheada até a borda. Frango com Catupiry, Costela, Carne Seca ou Palmito!</p>
+          <ul class="combo-items-list">
+            <li>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span>Serve generosamente de <strong>2 a 3 pessoas</strong></span>
+            </li>
+            <li>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span>100% Catupiry Original e massa artesanal</span>
+            </li>
+            <li>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span>Receita especial assada na hora da solicitação</span>
+            </li>
+          </ul>
+        </div>
+        <div class="combo-footer">
+          <div>
+            <div style="font-size:0.75rem; color:var(--color-text-light);">A partir de</div>
+            <div class="combo-price">R$ 48,00</div>
+          </div>
+          <a href="#cat-empadao-ate-as-2200h" class="btn-primary" style="padding:10px 20px; font-size:0.95rem;">
+            Ver Sabores +
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sticky Category Navigation Bar -->
+  <nav class="category-filter-nav" aria-label="Filtro de Categorias">
+    <div class="category-scroll-container" id="category-tabs">
+      <!-- Injected by app.js -->
+    </div>
+  </nav>
+
+  <!-- Search & Filter Controls Toolbar -->
+  <div class="search-toolbar">
+    <div class="search-input-box">
+      <svg class="search-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="11" cy="11" r="8"></circle>
+        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+      </svg>
+      <input type="text" id="search-input" class="search-input" placeholder="Buscar por sabor, recheio ou ingrediente (ex: camarão, catupiry, bacon)..." aria-label="Buscar produtos">
+    </div>
+
+    <div class="filter-tags">
+      <button class="tag-chip active" data-filter="all">Todos os Produtos</button>
+      <button class="tag-chip" data-filter="bestseller">🔥 Mais Pedidos</button>
+      <button class="tag-chip" data-filter="veg">🌱 Opções Vegetarianas</button>
+      <button class="tag-chip" data-filter="empadoes">🥧 Empadões</button>
+      <button class="tag-chip" data-filter="combos">⭐ Combos</button>
+    </div>
+  </div>
+
+  <!-- Products Catalog Content -->
+  <main class="catalog-section" id="catalog-section">
+    <div id="catalog-content">
+      <!-- Injected dynamically by app.js -->
+    </div>
+  </main>
+
+  <!-- Story & Branding Showcase Section -->
+  <section class="story-section" id="sobre-section">
+    <div class="story-container">
+      <div>
+        <div class="speech-bubble" style="background:var(--color-primary-burgundy); color:#FFF;">
+          História & Tradição
+        </div>
+        <h2 style="font-size:2.4rem; margin-bottom:16px;">
+          Empada de verdade, com amor e respeito ao seu paladar
+        </h2>
+        <p style="font-size:1.05rem; color:var(--color-text-muted); margin-bottom:14px;">
+          O <strong>André da Empada</strong> nasceu do desejo de servir a empada perfeita: aquela que não esfarela à toa, tem massa fina, amanteigada, que dissolve na boca e revela um recheio úmido, temperado no capricho.
+        </p>
+        <p style="font-size:1.05rem; color:var(--color-text-muted); margin-bottom:20px;">
+          Não usamos misturas ou requeijões genéricos: trabalhamos com o <strong>legítimo Catupiry Original</strong>, queijos nobres e carnes frescas desfiadas diariamente. Cada fornada é acompanhada de perto para garantir que o seu pedido chegue fumegando até a sua mesa.
+        </p>
+        <div style="display:flex; gap:20px; align-items:center;">
+          <div style="border-left:4px solid var(--color-primary-yellow); padding-left:14px;">
+            <div style="font-weight:800; font-size:1.5rem; color:var(--color-primary-burgundy);">183</div>
+            <div style="font-size:0.85rem; color:var(--color-text-muted);">Itens artesanais no cardápio</div>
+          </div>
+          <div style="border-left:4px solid var(--color-primary-burgundy); padding-left:14px;">
+            <div style="font-weight:800; font-size:1.5rem; color:var(--color-primary-burgundy);">100%</div>
+            <div style="font-size:0.85rem; color:var(--color-text-muted);">Catupiry Original certificado</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="story-gallery">
+        <img src="assets/branding/uniforms.png" alt="Equipe André da Empada com uniformes oficiais">
+        <img src="assets/branding/tray_packaging.png" alt="Bandeja de entrega com café e empadas quentinhas">
+        <img src="assets/branding/delivery_box.png" alt="Caixa térmica de delivery André da Empada">
+        <img src="assets/branding/storefront.png" alt="Fachada da loja André da Empada em Indaiatuba">
+      </div>
+    </div>
+  </section>
+
+  <!-- Customer Reviews Section -->
+  <section class="reviews-section" id="avaliacoes-section">
+    <div style="text-align:center;">
+      <h2 style="font-size:2.2rem; margin-bottom:6px;">Quem prova, não troca!</h2>
+      <p style="color:var(--color-text-muted); font-size:1.05rem;">Veja o que nossos vizinhos de Indaiatuba dizem sobre as nossas empadas</p>
+    </div>
+
+    <div class="reviews-grid">
+      <div class="review-card">
+        <div>
+          <div class="stars-row">★★★★★</div>
+          <p style="font-size:0.92rem; color:var(--color-text-dark); margin:12px 0;">
+            "Simplesmente a melhor empada de Indaiatuba! A de camarão com catupiry é surreal de gostosa, muito recheio e a massa derrete. Entrega super rápida pelo WhatsApp!"
+          </p>
+        </div>
+        <div class="review-header">
+          <div class="review-avatar">M</div>
+          <div>
+            <div class="review-author">Mariana Silveira</div>
+            <div class="review-neighborhood">Morada do Sol • Indaiatuba</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="review-card">
+        <div>
+          <div class="stars-row">★★★★★</div>
+          <p style="font-size:0.92rem; color:var(--color-text-dark); margin:12px 0;">
+            "O Combo Família salvou o nosso domingo! Os lanches são artesanais de verdade com carne de 200g muito suculenta e a batata vem entupida de bacon e catupiry."
+          </p>
+        </div>
+        <div class="review-header">
+          <div class="review-avatar">R</div>
+          <div>
+            <div class="review-author">Rodrigo Almeida</div>
+            <div class="review-neighborhood">Brigadeiro Faria Lima • Indaiatuba</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="review-card">
+        <div>
+          <div class="stars-row">★★★★★</div>
+          <p style="font-size:0.92rem; color:var(--color-text-dark); margin:12px 0;">
+            "Pedimos o Empadão de Costela para o jantar e serviu três pessoas com folga. Massa folhada impecável e atendimento muito educado. Já sou cliente fiel!"
+          </p>
+        </div>
+        <div class="review-header">
+          <div class="review-avatar">C</div>
+          <div>
+            <div class="review-author">Camila Duarte</div>
+            <div class="review-neighborhood">Centro • Indaiatuba</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Location & Hours Section -->
+  <section class="contact-section" id="contato-section">
+    <div class="contact-container">
+      <div class="contact-info-card">
+        <h2 style="font-size:2rem; margin-bottom:12px;">Venha nos Visitar ou Peça em Casa</h2>
+        <p style="color:var(--color-text-muted); font-size:0.95rem; margin-bottom:20px;">
+          Retire seu pedido quentinho no balcão ou receba no conforto da sua casa em toda a região de Indaiatuba.
+        </p>
+
+        <ul class="contact-list">
+          <li>
+            <div class="contact-icon-box">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+            </div>
+            <div>
+              <div style="font-weight:700;">Endereço:</div>
+              <div style="color:var(--color-text-muted);">Av. Geraldo Hackmann, 742 — Núcleo Habitacional Brigadeiro Faria Lima, Indaiatuba/SP</div>
+            </div>
+          </li>
+
+          <li>
+            <div class="contact-icon-box">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"></circle>
+                <polyline points="12 6 12 12 16 14"></polyline>
+              </svg>
+            </div>
+            <div>
+              <div style="font-weight:700;">Horário de Funcionamento:</div>
+              <div style="color:var(--color-text-muted);">Terça a Domingo: das 18h00 às 23h30 (Segunda: Fechado)</div>
+            </div>
+          </li>
+
+          <li>
+            <div class="contact-icon-box">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+              </svg>
+            </div>
+            <div>
+              <div style="font-weight:700;">Telefone & WhatsApp:</div>
+              <div style="color:var(--color-text-muted);">(19) 98949-0912</div>
+            </div>
+          </li>
+
+          <li>
+            <div class="contact-icon-box">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect width="20" height="14" x="2" y="5" rx="2"></rect>
+                <line x1="2" x2="22" y1="10" y2="10"></line>
+              </svg>
+            </div>
+            <div>
+              <div style="font-weight:700;">CNPJ:</div>
+              <div style="color:var(--color-text-muted);">46.134.717/0001-27</div>
+            </div>
+          </li>
+        </ul>
+
+        <a href="https://maps.google.com/?q=Av.+Geraldo+Hackmann,+742,+Indaiatuba+-+SP" target="_blank" rel="noopener noreferrer" class="btn-primary" style="width:100%; justify-content:center;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polygon points="3 11 22 2 13 21 11 13 3 11"></polygon></svg>
+          Traçar Rota no Google Maps
+        </a>
+      </div>
+
+      <div style="border-radius:var(--radius-lg); overflow:hidden; border:2px solid var(--color-border); box-shadow:var(--shadow-md); height:420px; background:#E5E7EB;">
+        <iframe 
+          title="Localização do André da Empada no Google Maps"
+          width="100%" 
+          height="100%" 
+          style="border:0;" 
+          loading="lazy" 
+          allowfullscreen 
+          referrerpolicy="no-referrer-when-downgrade"
+          src="https://maps.google.com/maps?q=Av.+Geraldo+Hackmann,+742,+Indaiatuba+-+SP&t=&z=15&ie=UTF8&iwloc=&output=embed">
+        </iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div>
+        <div style="display:flex; align-items:center; gap:10px; margin-bottom:12px;">
+          <img src="assets/branding/stamp_andre_yellow.png" alt="Logo André da Empada" style="width:40px; height:40px; border-radius:50%;">
+          <span style="font-family:var(--font-heading); font-size:1.3rem; font-weight:700; color:var(--color-primary-yellow);">ANDRÉ da EMPADA</span>
+        </div>
+        <p style="font-size:0.88rem; color:rgba(255,255,255,0.7); max-width:300px; margin-bottom:14px;">
+          A autêntica empada artesanal de Indaiatuba. Feita pra você com ingredientes de primeira e muito carinho. Fala comigo!
+        </p>
+        <div style="font-size:0.8rem; color:rgba(255,255,255,0.5);">
+          CNPJ: 46.134.717/0001-27
+        </div>
+      </div>
+
+      <div>
+        <div style="font-weight:700; color:var(--color-primary-yellow); margin-bottom:12px;">Links Rápidos</div>
+        <ul style="list-style:none; display:flex; flex-direction:column; gap:8px; font-size:0.88rem;">
+          <li><a href="#catalog-section" style="color:rgba(255,255,255,0.8);">Cardápio Completo</a></li>
+          <li><a href="#combos-section" style="color:rgba(255,255,255,0.8);">Combos Família & Casal</a></li>
+          <li><a href="#sobre-section" style="color:rgba(255,255,255,0.8);">Nossa História</a></li>
+          <li><a href="#avaliacoes-section" style="color:rgba(255,255,255,0.8);">Avaliações de Clientes</a></li>
+          <li><a href="https://app.cardapioweb.com/andredaempada" target="_blank" rel="noopener noreferrer" style="color:rgba(255,255,255,0.8);">Cardápio Oficial CardápioWeb ↗</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <div style="font-weight:700; color:var(--color-primary-yellow); margin-bottom:12px;">Atendimento</div>
+        <p style="font-size:0.88rem; color:rgba(255,255,255,0.8); margin-bottom:8px;">
+          Terça a Domingo: 18h00 às 23h30<br>
+          Segunda: Fechado
+        </p>
+        <p style="font-size:0.88rem; color:rgba(255,255,255,0.8);">
+          WhatsApp: <a href="https://wa.me/5519989490912" style="color:var(--color-whatsapp); font-weight:700;">(19) 98949-0912</a>
+        </p>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div>© 2026 André da Empada. Todos os direitos reservados.</div>
+      <div>Av. Geraldo Hackmann, 742, Indaiatuba - SP</div>
+    </div>
+  </footer>
+
+  <!-- Floating WhatsApp Direct Button -->
+  <a href="https://wa.me/5519989490912?text=Ol%C3%A1%2C%20Andr%C3%A9!%20Fala%20comigo%2C%20gostaria%20de%20fazer%20um%20pedido%20pelo%20WhatsApp!" target="_blank" rel="noopener noreferrer" class="floating-whatsapp-btn" aria-label="Falar com André no WhatsApp">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+    </svg>
+    <span>Fala Comigo!</span>
+  </a>
+
+  <!-- Product Customization Modal -->
+  <div class="modal-overlay" id="product-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal-card">
+      <div class="modal-header">
+        <div>
+          <h3 class="modal-title" id="modal-title">Nome do Produto</h3>
+          <div style="font-family:var(--font-heading); font-size:1.2rem; font-weight:700; color:var(--color-primary-burgundy); margin-top:4px;" id="modal-base-price">R$ 0,00</div>
+        </div>
+        <button class="modal-close-btn" id="btn-close-modal" aria-label="Fechar janela">✕</button>
+      </div>
+
+      <div class="modal-body">
+        <p style="font-size:0.92rem; color:var(--color-text-muted);" id="modal-desc"></p>
+        
+        <div id="modal-options-container">
+          <!-- Dynamic group options -->
+        </div>
+
+        <div>
+          <label for="modal-notes-input" class="form-label">Observações do Item:</label>
+          <textarea id="modal-notes-input" class="form-textarea" rows="2" placeholder="Ex: massa bem assadinha, tirar cebola, etc."></textarea>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <div class="qty-stepper">
+          <button class="qty-btn" id="btn-modal-dec" aria-label="Diminuir quantidade">-</button>
+          <span class="qty-display" id="modal-qty">1</span>
+          <button class="qty-btn" id="btn-modal-inc" aria-label="Aumentar quantidade">+</button>
+        </div>
+
+        <button class="btn-primary" id="btn-modal-add" style="padding:12px 24px;">
+          <span>Adicionar</span>
+          <span id="modal-total-btn-price" style="background:rgba(255,255,255,0.25); padding:2px 8px; border-radius:var(--radius-full); font-size:0.9rem;">R$ 0,00</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Cart Slide-Over Drawer -->
+  <div class="cart-drawer-backdrop" id="cart-drawer-backdrop">
+    <aside class="cart-drawer" aria-label="Carrinho de Compras">
+      <div class="cart-drawer-header">
+        <div style="display:flex; align-items:center; gap:8px;">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary-burgundy)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="9" cy="21" r="1"></circle>
+            <circle cx="20" cy="21" r="1"></circle>
+            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+          </svg>
+          <h3 style="font-size:1.3rem;">Seu Pedido</h3>
+        </div>
+        <button class="modal-close-btn" id="btn-close-cart" aria-label="Fechar carrinho">✕</button>
+      </div>
+
+      <div class="cart-items-container" id="cart-drawer-items">
+        <!-- Rendered by app.js -->
+      </div>
+
+      <div class="cart-drawer-footer">
+        <!-- Delivery Mode Toggle -->
+        <div style="margin-bottom:14px;">
+          <label class="form-label">Como deseja receber?</label>
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:8px;">
+            <button class="tag-chip active" id="btn-toggle-delivery" style="text-align:center; justify-content:center; padding:8px;">
+              🛵 Entrega
+            </button>
+            <button class="tag-chip" id="btn-toggle-retirada" style="text-align:center; justify-content:center; padding:8px;">
+              🏬 Retirar no Balcão
+            </button>
+          </div>
+        </div>
+
+        <!-- Neighborhood Selector -->
+        <div id="neighborhood-selector-box" style="margin-bottom:14px;">
+          <label for="neighborhood-select" class="form-label">Bairro para Entrega (Indaiatuba):</label>
+          <select id="neighborhood-select" class="form-select">
+            <option value="Brigadeiro Faria Lima">Brigadeiro Faria Lima (R$ 5,00)</option>
+            <option value="Centro">Centro (R$ 7,00)</option>
+            <option value="Morada do Sol">Morada do Sol (R$ 6,00)</option>
+            <option value="Cecap">Cecap (R$ 6,00)</option>
+            <option value="Jardim Morumbi">Jardim Morumbi (R$ 6,00)</option>
+            <option value="Parque Ecológico">Parque Ecológico (R$ 8,00)</option>
+            <option value="Itaici">Itaici (R$ 10,00)</option>
+            <option value="Outro Bairro (Indaiatuba)">Outro Bairro (R$ 7,50)</option>
+          </select>
+        </div>
+
+        <!-- Coupon input -->
+        <div style="display:flex; gap:8px; margin-bottom:16px;">
+          <input type="text" id="coupon-input" class="form-input" placeholder="Cupom (ex: FALACOMIGO)" style="text-transform:uppercase; padding:8px 12px; font-size:0.85rem;">
+          <button class="btn-primary" id="btn-apply-coupon" style="padding:8px 14px; font-size:0.85rem; border-radius:var(--radius-sm);">Aplicar</button>
+        </div>
+
+        <!-- Totals summary -->
+        <div class="cart-totals-table">
+          <div class="cart-total-row">
+            <span>Subtotal:</span>
+            <span id="cart-subtotal-val">R$ 0,00</span>
+          </div>
+          <div class="cart-total-row">
+            <span>Taxa de Entrega:</span>
+            <span id="cart-delivery-val">R$ 5,00</span>
+          </div>
+          <div class="cart-total-row">
+            <span>Desconto:</span>
+            <span id="cart-discount-val" style="color:var(--color-success);">R$ 0,00</span>
+          </div>
+          <div class="cart-total-row final">
+            <span>Total:</span>
+            <span id="cart-total-val">R$ 0,00</span>
+          </div>
+        </div>
+
+        <button class="btn-primary" id="btn-go-to-checkout" style="width:100%; justify-content:center; padding:14px;" disabled>
+          Avançar para Pagamento
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+        </button>
+      </div>
+    </aside>
+  </div>
+
+  <!-- Checkout & Payment Modal -->
+  <div class="modal-overlay" id="checkout-modal" role="dialog" aria-modal="true" aria-labelledby="checkout-modal-title">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3 class="modal-title" id="checkout-modal-title">Finalizar Pedido</h3>
+        <button class="modal-close-btn" id="btn-close-checkout" aria-label="Fechar checkout">✕</button>
+      </div>
+
+      <div class="modal-body">
+        <div class="checkout-section-title">
+          <span>👤</span> Seus Dados
+        </div>
+        <div class="form-group">
+          <label for="checkout-name" class="form-label">Nome Completo: *</label>
+          <input type="text" id="checkout-name" class="form-input" placeholder="Como podemos te chamar?">
+        </div>
+        <div class="form-group">
+          <label for="checkout-phone" class="form-label">WhatsApp: *</label>
+          <input type="tel" id="checkout-phone" class="form-input" placeholder="(19) 99999-9999">
+        </div>
+
+        <div class="checkout-section-title">
+          <span>📍</span> Endereço de Entrega
+        </div>
+        <div style="display:grid; grid-template-columns:3fr 1fr; gap:10px;">
+          <div class="form-group">
+            <label for="checkout-street" class="form-label">Rua / Avenida: *</label>
+            <input type="text" id="checkout-street" class="form-input" placeholder="Ex: Rua das Palmeiras">
+          </div>
+          <div class="form-group">
+            <label for="checkout-num" class="form-label">Número: *</label>
+            <input type="text" id="checkout-num" class="form-input" placeholder="123">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="checkout-comp" class="form-label">Complemento / Referência:</label>
+          <input type="text" id="checkout-comp" class="form-input" placeholder="Apto 42, Bloco B, portão verde...">
+        </div>
+
+        <div class="checkout-section-title">
+          <span>💳</span> Forma de Pagamento
+        </div>
+        <div class="payment-methods-grid">
+          <div class="payment-radio-card active" data-method="pix">
+            <span style="font-size:1.3rem;">⚡</span>
+            <span>PIX Instantâneo</span>
+          </div>
+          <div class="payment-radio-card" data-method="cartao">
+            <span style="font-size:1.3rem;">💳</span>
+            <span>Cartão Entrega</span>
+          </div>
+          <div class="payment-radio-card" data-method="dinheiro">
+            <span style="font-size:1.3rem;">💵</span>
+            <span>Dinheiro</span>
+          </div>
+        </div>
+
+        <!-- Pix Details Box -->
+        <div class="pix-box" id="pix-checkout-box">
+          <div style="font-weight:700; color:#166534; margin-bottom:6px;">Chave PIX Oficial (CNPJ): 46.134.717/0001-27</div>
+          <div class="pix-timer-bar">
+            Expira em: <span id="pix-countdown" style="font-weight:800; font-family:monospace;">15:00</span>
+          </div>
+          <img src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=00020126580014br.gov.bcb.pix0136461347170001275204000053039865802BR5915ANDRE%20DA%20EMPADA6010INDAIATUBA62070503***6304" alt="QR Code Pix André da Empada" class="pix-qr-img">
+          <div class="pix-code-field" id="pix-payload-text">
+            00020126580014br.gov.bcb.pix0136461347170001275204000053039865802BR5915ANDRE DA EMPADA6010INDAIATUBA62070503***6304
+          </div>
+          <button class="btn-primary" id="btn-copy-pix" style="background:#16A34A; padding:8px 16px; font-size:0.85rem; width:100%; justify-content:center;">
+            Copiar Código Pix Copia e Cola
+          </button>
+        </div>
+
+        <!-- Cash Change Input -->
+        <div id="cash-change-box" style="display:none; margin-bottom:16px;">
+          <label for="checkout-change" class="form-label">Precisa de troco para quanto?</label>
+          <input type="text" id="checkout-change" class="form-input" placeholder="Ex: 50,00 ou Não preciso">
+        </div>
+      </div>
+
+      <div class="modal-footer" style="flex-direction:column; gap:12px; align-items:stretch;">
+        <div style="display:flex; justify-content:space-between; align-items:center;">
+          <span style="font-weight:700;">Total a pagar:</span>
+          <span id="checkout-total-display" style="font-family:var(--font-heading); font-size:1.4rem; font-weight:800; color:var(--color-primary-burgundy);">R$ 0,00</span>
+        </div>
+        <button class="btn-whatsapp" id="btn-submit-order" style="width:100%; justify-content:center; padding:14px; font-size:1.05rem;">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+          </svg>
+          Confirmar e Enviar Pedido via WhatsApp
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Container -->
+  <div class="toast-container" id="toast-container"></div>
+
+  <!-- Script references -->
+  <script src="data/products-data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

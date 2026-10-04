@@ -1,0 +1,1589 @@
+{
+  "G01": {
+    "id": "G01",
+    "title": "Gostaria de sachês de molho (ketchup,mostarda e maionese)",
+    "rule": "Escolha 1 opção. Obrigatório.",
+    "options": [
+      {
+        "name": "Sim",
+        "price": "Sem acréscimo exibido",
+        "status": "Exibida"
+      },
+      {
+        "name": "Não",
+        "price": "Sem acréscimo exibido",
+        "status": "Exibida"
+      }
+    ]
+  },
+  "G02": {
+    "id": "G02",
+    "title": "Adicionais do seu caldo",
+    "rule": "Escolha até 10 opções. Opcional.",
+    "options": [
+      {
+        "name": "Torresmo",
+        "price": "+ R$ 5,50",
+        "status": "Em falta"
+      },
+      {
+        "name": "Torrada",
+        "price": "+ R$ 3,00",
+        "status": "Exibida"
+      },
+      {
+        "name": "Cheiro Verde",
+        "price": "+ R$ 1,50",
+        "status": "Exibida"
+      },
+      {
+        "name": "Mussarela",
+        "price": "+ R$ 5,00",
+        "status": "Exibida"
+      },
+      {
+        "name": "Bacon",
+        "price": "+ R$ 6,50",
+        "status": "Exibida"
+      },
+      {
+        "name": "Ovo Cozido",
+        "price": "+ R$ 2,00",
+        "status": "Exibida"
+      }
+    ]
+  },
+  "G03": {
+    "id": "G03",
+    "title": "Adicionais no pastel",
+    "rule": "Escolha até 4 opções. Opcional.",
+    "options": [
+      {
+        "name": "BACON",
+        "price": "+ R$ 3,50",
+        "status": "Exibida"
+      },
+      {
+        "name": "MUSSARELA",
+        "price": "+ R$ 4,00",
+        "status": "Exibida"
+      },
+      {
+        "name": "Ovo Cozido",
+        "price": "+ R$ 2,00",
+        "status": "Exibida"
+      },
+      {
+        "name": "Milho",
+        "price": "+ R$ 1,50",
+        "status": "Exibida"
+      },
+      {
+        "name": "Ervilha",
+        "price": "+ R$ 1,50",
+        "status": "Exibida"
+      },
+      {
+        "name": "Azeitona",
+        "price": "+ R$ 2,00",
+        "status": "Exibida"
+      },
+      {
+        "name": "Catupiry Original",
+        "price": "+ R$ 5,00",
+        "status": "Exibida"
+      },
+      {
+        "name": "Cheddar Original",
+        "price": "+ R$ 5,00",
+        "status": "Exibida"
+      },
+      {
+        "name": "Porção de Vinagrete 80g",
+        "price": "+ R$ 3,00",
+        "status": "Exibida"
+      },
+      {
+        "name": "Palmito Picado",
+        "price": "+ R$ 3,50",
+        "status": "Exibida"
+      },
+      {
+        "name": "Calabresa",
+        "price": "+ R$ 3,50",
+        "status": "Exibida"
+      },
+      {
+        "name": "Brócolis",
+        "price": "+ R$ 3,00",
+        "status": "Exibida"
+      },
+      {
+        "name": "Molho verde 30ml",
+        "price": "+ R$ 1,50",
+        "status": "Exibida"
+      },
+      {
+        "name": "Tomate Picado",
+        "price": "+ R$ 3,00",
+        "status": "Exibida"
+      },
+      {
+        "name": "champignon",
+        "price": "+ R$ 3,50",
+        "status": "Exibida"
+      },
+      {
+        "name": "Provolone",
+        "price": "+ R$ 5,00",
+        "status": "Exibida"
+      }
+    ]
+  },
+  "G04": {
+    "id": "G04",
+    "title": "Gostaria de Molho verde?",
+    "rule": "Escolha 1 opção. Obrigatório.",
+    "options": [
+      {
+        "name": "Sim",
+        "price": "Sem acréscimo exibido",
+        "status": "Exibida"
+      },
+      {
+        "name": "Não",
+        "price": "Sem acréscimo exibido",
+        "status": "Exibida"
+      }
+    ]
+  },
+  "G05": {
+    "id": "G05",
+    "title": "Gostaria de vinagrete",
+    "rule": "Escolha 1 opção. Obrigatório.",
+    "options": [
+      {
+        "name": "Sim",
+        "price": "Sem acréscimo exibido",
+        "status": "Exibida"
+      },
+      {
+        "name": "Não",
+        "price": "Sem acréscimo exibido",
+        "status": "Exibida"
+      }
+    ]
+  },
+  "G06": {
+    "id": "G06",
+    "title": "Adicionais no pastel",
+    "rule": "Escolha até 6 opções. Opcional.",
+    "options": [
+      {
+        "name": "BACON",
+        "price": "+ R$ 3,50",
+        "status": "Exibida"
+      },
+      {
+        "name": "MUSSARELA",
+        "price": "+ R$ 4,00",
+        "status": "Exibida"
+      },
+      {
+        "name": "Ovo Cozido",
+        "price": "+ R$ 2,00",
+        "status": "Exibida"
+      },
+      {
+        "name": "Milho",
+        "price": "+ R$ 1,50",
+        "status": "Exibida"
+      },
+      {
+        "name": "Ervilha",
+        "price": "+ R$ 1,50",
+        "status": "Exibida"
+      },
+      {
+        "name": "Azeitona",
+        "price": "+ R$ 2,00",
+        "status": "Exibida"
+      },
+      {
+        "name": "Catupiry Original",
+        "price": "+ R$ 5,00",
+        "status": "Exibida"
+      },
+      {
+        "name": "Cheddar Original",
+        "price": "+ R$ 5,00",
+        "status": "Exibida"
+      },
+      {
+        "name": "Porção de Vinagrete 80g",
+        "price": "+ R$ 3,00",
+        "status": "Exibida"
+      },
+      {
+        "name": "Palmito Picado",
+        "price": "+ R$ 3,50",
+        "status": "Exibida"
+      },
+      {
+        "name": "Calabresa",
+        "price": "+ R$ 3,50",
+        "status": "Exibida"
+      },
+      {
+        "name": "Brócolis",
+        "price": "+ R$ 3,00",
+        "status": "Exibida"
+      },
+      {
+        "name": "Molho verde 30ml",
+        "price": "+ R$ 1,50",
+        "status": "Exibida"
+      },
+      {
+        "name": "Queijio Minas frescal",
+        "price": "+ R$ 5,00",
+        "status": "Exibida"
+      }
+    ]
+  },
+  "G07": {
+    "id": "G07",
+    "title": "Adicionais no pastel",
+    "rule": "Escolha até 4 opções. Opcional.",
+    "options": [
+      {
+        "name": "BACON",
+        "price": "+ R$ 3,50",
+        "status": "Exibida"
+      },
+      {
+        "name": "MUSSARELA",
+        "price": "+ R$ 4,00",
+        "status": "Exibida"
+      },
+      {
+        "name": "Ovo Cozido",
+        "price": "+ R$ 2,00",
+        "status": "Exibida"
+      },
+      {
+        "name": "Milho",
+        "price": "+ R$ 1,50",
+        "status": "Exibida"
+      },
+      {
+        "name": "Ervilha",
+        "price": "+ R$ 1,50",
+        "status": "Exibida"
+      },
+      {
+        "name": "Azeitona",
+        "price": "+ R$ 2,00",
+        "status": "Exibida"
+      },
+      {
+        "name": "Catupiry Original",
+        "price": "+ R$ 5,00",
+        "status": "Exibida"
+      },
+      {
+        "name": "Cheddar Original",
+        "price": "+ R$ 5,00",
+        "status": "Exibida"
+      },
+      {
+        "name": "Porção de Vinagrete 80g",
+        "price": "+ R$ 3,00",
+        "status": "Exibida"
+      },
+      {
+        "name": "Palmito Picado",
+        "price": "+ R$ 3,50",
+        "status": "Exibida"
+      },
+      {
+        "name": "Calabresa",
+        "price": "+ R$ 3,50",
+        "status": "Exibida"
+      },
+      {
+        "name": "Brócolis",
+        "price": "+ R$ 3,00",
+        "status": "Exibida"
+      },
+      {
+        "name": "Molho verde 30ml",
+        "price": "+ R$ 1,50",
+        "status": "Exibida"
+      },
+      {
+        "name": "Presunto",
+        "price": "+ R$ 3,50",
+        "status": "Exibida"
+      }
+    ]
+  },
+  "G08": {
+    "id": "G08",
+    "title": "Adicionais no pastel",
+    "rule": "Escolha até 4 opções. Opcional.",
+    "options": [
+      {
+        "name": "BACON",
+        "price": "+ R$ 3,50",
+        "status": "Exibida"
+      },
+      {
+        "name": "MUSSARELA",
+        "price": "+ R$ 4,00",
+        "status": "Exibida"
+      },
+      {
+        "name": "Ovo Cozido",
+        "price": "+ R$ 2,00",
+        "status": "Exibida"
+      },
+      {
+        "name": "Milho",
+        "price": "+ R$ 1,50",
+        "status": "Exibida"
+      },
+      {
+        "name": "Ervilha",
+        "price": "+ R$ 1,50",
+        "status": "Exibida"
+      },
+      {
+        "name": "Azeitona",
+        "price": "+ R$ 2,00",
+        "status": "Exibida"
+      },
+      {
+        "name": "Catupiry Original",
+        "price": "+ R$ 5,00",
+        "status": "Exibida"
+      },
+      {
+        "name": "Cheddar Original",
+        "price": "+ R$ 5,00",
+        "status": "Exibida"
+      },
+      {
+        "name": "Porção de Vinagrete 80g",
+        "price": "+ R$ 3,00",
+        "status": "Exibida"
+      },
+      {
+        "name": "Palmito Picado",
+        "price": "+ R$ 3,50",
+        "status": "Exibida"
+      },
+      {
+        "name": "Calabresa",
+        "price": "+ R$ 3,50",
+        "status": "Exibida"
+      },
+      {
+        "name": "Brócolis",
+        "price": "+ R$ 3,00",
+        "status": "Exibida"
+      },
+      {
+        "name": "Molho verde 30ml",
+        "price": "+ R$ 1,50",
+        "status": "Exibida"
+      }
+    ]
+  },
+  "G09": {
+    "id": "G09",
+    "title": "Carne ou frango",
+    "rule": "Escolha 1 opção. Obrigatório.",
+    "options": [
+      {
+        "name": "Carne Moída",
+        "price": "Sem acréscimo exibido",
+        "status": "Exibida"
+      },
+      {
+        "name": "Frango Desfiado",
+        "price": "Sem acréscimo exibido",
+        "status": "Exibida"
+      }
+    ]
+  },
+  "G10": {
+    "id": "G10",
+    "title": "Tipo de Palmito",
+    "rule": "Escolha 1 opção. Obrigatório.",
+    "options": [
+      {
+        "name": "Palmito Picado",
+        "price": "Sem acréscimo exibido",
+        "status": "Exibida"
+      },
+      {
+        "name": "Palmito Cremoso",
+        "price": "Sem acréscimo exibido",
+        "status": "Exibida"
+      }
+    ]
+  },
+  "G11": {
+    "id": "G11",
+    "title": "Tipo de Queijo no Pastel Doce",
+    "rule": "Escolha 1 opção. Obrigatório.",
+    "options": [
+      {
+        "name": "Queijo Minas Frescal",
+        "price": "Sem acréscimo exibido",
+        "status": "Exibida"
+      },
+      {
+        "name": "Queijo Mussarela",
+        "price": "Sem acréscimo exibido",
+        "status": "Exibida"
+      }
+    ]
+  },
+  "G12": {
+    "id": "G12",
+    "title": "Adicional Pastel doce",
+    "rule": "Escolha até 1 opção. Opcional.",
+    "options": [
+      {
+        "name": "Passar no Açúcar e Canela",
+        "price": "+ R$ 1,00",
+        "status": "Exibida"
+      },
+      {
+        "name": "Catupiry",
+        "price": "+ R$ 5,00",
+        "status": "Exibida"
+      },
+      {
+        "name": "doce de leite",
+        "price": "+ R$ 3,00",
+        "status": "Exibida"
+      }
+    ]
+  },
+  "G13": {
+    "id": "G13",
+    "title": "Adicional Pastel doce",
+    "rule": "Escolha até 2 opções. Opcional.",
+    "options": [
+      {
+        "name": "Passar no Açúcar e Canela",
+        "price": "+ R$ 1,00",
+        "status": "Exibida"
+      },
+      {
+        "name": "Catupiry",
+        "price": "+ R$ 5,00",
+        "status": "Exibida"
+      }
+    ]
+  },
+  "G14": {
+    "id": "G14",
+    "title": "Tipo de Macarrão",
+    "rule": "Escolha 1 opção. Obrigatório.",
+    "options": [
+      {
+        "name": "Penne",
+        "price": "Sem acréscimo exibido",
+        "status": "Exibida"
+      },
+      {
+        "name": "Parafuso",
+        "price": "Sem acréscimo exibido",
+        "status": "Exibida"
+      },
+      {
+        "name": "Espaguete",
+        "price": "Sem acréscimo exibido",
+        "status": "Exibida"
+      }
+    ]
+  },
+  "G15": {
+    "id": "G15",
+    "title": "Molho do seu macarrão",
+    "rule": "Escolha 1 opção. Obrigatório.",
+    "options": [
+      {
+        "name": "Molho Vermelho",
+        "price": "Sem acréscimo exibido",
+        "status": "Exibida"
+      },
+      {
+        "name": "Molho Branco",
+        "price": "Sem acréscimo exibido",
+        "status": "Exibida"
+      },
+      {
+        "name": "Dois Molhos",
+        "price": "+ R$ 2,00",
+        "status": "Exibida"
+      },
+      {
+        "name": "Sem Molho",
+        "price": "Sem acréscimo exibido",
+        "status": "Exibida"
+      }
+    ]
+  },
+  "G16": {
+    "id": "G16",
+    "title": "Escolha 01 Tempero",
+    "rule": "Escolha 1 opção. Obrigatório.",
+    "options": [
+      {
+        "name": "Sem tempero",
+        "price": "Sem acréscimo exibido",
+        "status": "Exibida"
+      },
+      {
+        "name": "Orégano",
+        "price": "Sem acréscimo exibido",
+        "status": "Exibida"
+      },
+      {
+        "name": "Cheiro Verde",
+        "price": "Sem acréscimo exibido",
+        "status": "Exibida"
+      },
+      {
+        "name": "Manjericão",
+        "price": "Sem acréscimo exibido",
+        "status": "Exibida"
+      },
+      {
+        "name": "Pimenta Calabresa",
+        "price": "Sem acréscimo exibido",
+        "status": "Exibida"
+      }
+    ]
+  },
+  "G17": {
+    "id": "G17",
+    "title": "Escolha 04 acompanhamentos",
+    "rule": "Escolha de 1 a 4 opções. Obrigatório.",
+    "options": [
+      {
+        "name": "Carne Moída",
+        "price": "Sem acréscimo exibido",
+        "status": "Exibida"
+      },
+      {
+        "name": "Frango desfiado",
+        "price": "Sem acréscimo exibido",
+        "status": "Exibida"
+      },
+      {
+        "name": "Lombo Canadense",
+        "price": "Sem acréscimo exibido",
+        "status": "Exibida"
+      },
+      {
+        "name": "Palmito",
+        "price": "Sem acréscimo exibido",
+        "status": "Exibida"
+      },
+      {
+        "name": "Calabresa Ralada",
+        "price": "Sem acréscimo exibido",
+        "status": "Exibida"
+      },
+      {
+        "name": "Salsicha",
+        "price": "Sem acréscimo exibido",
+        "status": "Exibida"
+      },
+      {
+        "name": "Milho",
+        "price": "Sem acréscimo exibido",
+        "status": "Exibida"
+      },
+      {
+        "name": "Ervilha",
+        "price": "Sem acréscimo exibido",
+        "status": "Exibida"
+      },
+      {
+        "name": "Champignon",
+        "price": "Sem acréscimo exibido",
+        "status": "Exibida"
+      },
+      {
+        "name": "Azeitona",
+        "price": "Sem acréscimo exibido",
+        "status": "Exibida"
+      },
+      {
+        "name": "Mussarela",
+        "price": "Sem acréscimo exibido",
+        "status": "Exibida"
+      },
+      {
+        "name": "Parmesão",
+        "price": "Sem acréscimo exibido",
+        "status": "Exibida"
+      },
+      {
+        "name": "Batata Palha",
+        "price": "Sem acréscimo exibido",
+        "status": "Exibida"
+      },
+      {
+        "name": "Brócolis",
+        "price": "Sem acréscimo exibido",
+        "status": "Exibida"
+      },
+      {
+        "name": "Alho Frito",
+        "price": "Sem acréscimo exibido",
+        "status": "Exibida"
+      },
+      {
+        "name": "Presunto",
+        "price": "Sem acréscimo exibido",
+        "status": "Exibida"
+      }
+    ]
+  },
+  "G18": {
+    "id": "G18",
+    "title": "Adicionais",
+    "rule": "Escolha até 10 opções. Opcional.",
+    "options": [
+      {
+        "name": "Bacon",
+        "price": "+ R$ 5,00",
+        "status": "Exibida"
+      },
+      {
+        "name": "Catupiry",
+        "price": "+ R$ 5,00",
+        "status": "Exibida"
+      },
+      {
+        "name": "Cheddar",
+        "price": "+ R$ 6,00",
+        "status": "Exibida"
+      },
+      {
+        "name": "Ovo Cozido",
+        "price": "+ R$ 2,00",
+        "status": "Exibida"
+      },
+      {
+        "name": "Brócolis",
+        "price": "+ R$ 4,50",
+        "status": "Exibida"
+      },
+      {
+        "name": "Mussarela",
+        "price": "+ R$ 4,50",
+        "status": "Exibida"
+      },
+      {
+        "name": "Alho Frito",
+        "price": "+ R$ 2,00",
+        "status": "Exibida"
+      },
+      {
+        "name": "Torresmo",
+        "price": "+ R$ 6,00",
+        "status": "Em falta"
+      },
+      {
+        "name": "MILHO",
+        "price": "+ R$ 2,00",
+        "status": "Exibida"
+      },
+      {
+        "name": "Cheiro Verde",
+        "price": "+ R$ 1,00",
+        "status": "Exibida"
+      },
+      {
+        "name": "Orégano",
+        "price": "+ R$ 1,00",
+        "status": "Exibida"
+      },
+      {
+        "name": "Pimenta Calabresa",
+        "price": "+ R$ 1,00",
+        "status": "Exibida"
+      },
+      {
+        "name": "Manjericão",
+        "price": "+ R$ 1,00",
+        "status": "Exibida"
+      }
+    ]
+  },
+  "G19": {
+    "id": "G19",
+    "title": "Talher",
+    "rule": "Escolha 1 opção. Obrigatório.",
+    "options": [
+      {
+        "name": "Preciso de talher",
+        "price": "Sem acréscimo exibido",
+        "status": "Exibida"
+      },
+      {
+        "name": "Não preciso de talher",
+        "price": "Sem acréscimo exibido",
+        "status": "Exibida"
+      }
+    ]
+  },
+  "G20": {
+    "id": "G20",
+    "title": "Acompanhamentos",
+    "rule": "Escolha de 1 a 4 opções. Obrigatório.",
+    "options": [
+      {
+        "name": "Carne Moída",
+        "price": "Sem acréscimo exibido",
+        "status": "Exibida"
+      },
+      {
+        "name": "Frango desfiado",
+        "price": "Sem acréscimo exibido",
+        "status": "Exibida"
+      },
+      {
+        "name": "Lombo Canadense",
+        "price": "Sem acréscimo exibido",
+        "status": "Exibida"
+      },
+      {
+        "name": "Palmito",
+        "price": "Sem acréscimo exibido",
+        "status": "Exibida"
+      },
+      {
+        "name": "Calabresa Ralada",
+        "price": "Sem acréscimo exibido",
+        "status": "Exibida"
+      },
+      {
+        "name": "Salsicha",
+        "price": "Sem acréscimo exibido",
+        "status": "Exibida"
+      },
+      {
+        "name": "Milho",
+        "price": "Sem acréscimo exibido",
+        "status": "Exibida"
+      },
+      {
+        "name": "Ervilha",
+        "price": "Sem acréscimo exibido",
+        "status": "Exibida"
+      },
+      {
+        "name": "Champignon",
+        "price": "Sem acréscimo exibido",
+        "status": "Exibida"
+      },
+      {
+        "name": "Azeitona",
+        "price": "Sem acréscimo exibido",
+        "status": "Exibida"
+      },
+      {
+        "name": "Mussarela",
+        "price": "Sem acréscimo exibido",
+        "status": "Exibida"
+      },
+      {
+        "name": "Parmesão",
+        "price": "Sem acréscimo exibido",
+        "status": "Exibida"
+      },
+      {
+        "name": "Batata Palha",
+        "price": "Sem acréscimo exibido",
+        "status": "Exibida"
+      },
+      {
+        "name": "Brócolis",
+        "price": "Sem acréscimo exibido",
+        "status": "Exibida"
+      },
+      {
+        "name": "Alho Frito",
+        "price": "Sem acréscimo exibido",
+        "status": "Exibida"
+      },
+      {
+        "name": "Presunto",
+        "price": "Sem acréscimo exibido",
+        "status": "Exibida"
+      }
+    ]
+  },
+  "G21": {
+    "id": "G21",
+    "title": "Tempero",
+    "rule": "Escolha 1 opção. Obrigatório.",
+    "options": [
+      {
+        "name": "Sem tempero",
+        "price": "Sem acréscimo exibido",
+        "status": "Exibida"
+      },
+      {
+        "name": "Orégano",
+        "price": "Sem acréscimo exibido",
+        "status": "Exibida"
+      },
+      {
+        "name": "Cheiro Verde",
+        "price": "Sem acréscimo exibido",
+        "status": "Exibida"
+      },
+      {
+        "name": "Manjericão",
+        "price": "Sem acréscimo exibido",
+        "status": "Exibida"
+      },
+      {
+        "name": "Pimenta Calabresa",
+        "price": "Sem acréscimo exibido",
+        "status": "Exibida"
+      }
+    ]
+  },
+  "G22": {
+    "id": "G22",
+    "title": "Macarrão",
+    "rule": "Escolha 1 opção. Obrigatório.",
+    "options": [
+      {
+        "name": "Penne",
+        "price": "Sem acréscimo exibido",
+        "status": "Exibida"
+      },
+      {
+        "name": "Parafuso",
+        "price": "Sem acréscimo exibido",
+        "status": "Exibida"
+      },
+      {
+        "name": "Espaguete",
+        "price": "Sem acréscimo exibido",
+        "status": "Exibida"
+      }
+    ]
+  },
+  "G23": {
+    "id": "G23",
+    "title": "Escolha 03 Acompanhamentos",
+    "rule": "Escolha de 1 a 3 opções. Obrigatório.",
+    "options": [
+      {
+        "name": "Carne Moída",
+        "price": "Sem acréscimo exibido",
+        "status": "Exibida"
+      },
+      {
+        "name": "Frango Desfiado",
+        "price": "Sem acréscimo exibido",
+        "status": "Exibida"
+      },
+      {
+        "name": "Lombo Canadense",
+        "price": "Sem acréscimo exibido",
+        "status": "Exibida"
+      },
+      {
+        "name": "Calabresa Ralada",
+        "price": "Sem acréscimo exibido",
+        "status": "Exibida"
+      },
+      {
+        "name": "Salsicha",
+        "price": "Sem acréscimo exibido",
+        "status": "Exibida"
+      },
+      {
+        "name": "Palmito",
+        "price": "Sem acréscimo exibido",
+        "status": "Exibida"
+      },
+      {
+        "name": "Milho",
+        "price": "Sem acréscimo exibido",
+        "status": "Exibida"
+      },
+      {
+        "name": "Ervilha",
+        "price": "Sem acréscimo exibido",
+        "status": "Exibida"
+      },
+      {
+        "name": "Champignon",
+        "price": "Sem acréscimo exibido",
+        "status": "Exibida"
+      },
+      {
+        "name": "Azeitona",
+        "price": "Sem acréscimo exibido",
+        "status": "Exibida"
+      },
+      {
+        "name": "Batata Palha",
+        "price": "Sem acréscimo exibido",
+        "status": "Exibida"
+      },
+      {
+        "name": "Brócolis",
+        "price": "Sem acréscimo exibido",
+        "status": "Exibida"
+      },
+      {
+        "name": "Alho Frito",
+        "price": "Sem acréscimo exibido",
+        "status": "Exibida"
+      },
+      {
+        "name": "Mussarela",
+        "price": "Sem acréscimo exibido",
+        "status": "Exibida"
+      },
+      {
+        "name": "Parmesão",
+        "price": "Sem acréscimo exibido",
+        "status": "Exibida"
+      },
+      {
+        "name": "Presunto",
+        "price": "Sem acréscimo exibido",
+        "status": "Exibida"
+      }
+    ]
+  },
+  "G24": {
+    "id": "G24",
+    "title": "Adicionais",
+    "rule": "Escolha até 10 opções. Opcional.",
+    "options": [
+      {
+        "name": "Bacon",
+        "price": "+ R$ 5,00",
+        "status": "Exibida"
+      },
+      {
+        "name": "Catupiry",
+        "price": "+ R$ 5,00",
+        "status": "Exibida"
+      },
+      {
+        "name": "Cheddar",
+        "price": "+ R$ 6,00",
+        "status": "Exibida"
+      },
+      {
+        "name": "Ovo Cozido",
+        "price": "+ R$ 2,00",
+        "status": "Exibida"
+      },
+      {
+        "name": "Brócolis",
+        "price": "+ R$ 4,50",
+        "status": "Exibida"
+      },
+      {
+        "name": "Mussarela",
+        "price": "+ R$ 4,50",
+        "status": "Exibida"
+      },
+      {
+        "name": "Alho Frito",
+        "price": "+ R$ 2,00",
+        "status": "Exibida"
+      },
+      {
+        "name": "torresmo",
+        "price": "+ R$ 6,00",
+        "status": "Em falta"
+      }
+    ]
+  },
+  "G25": {
+    "id": "G25",
+    "title": "Adicionais no seu lanche",
+    "rule": "Escolha até 6 opções. Opcional.",
+    "options": [
+      {
+        "name": "Molho verde 30ml",
+        "price": "+ R$ 1,50",
+        "status": "Exibida"
+      },
+      {
+        "name": "Mussarela",
+        "price": "+ R$ 4,00",
+        "status": "Exibida"
+      },
+      {
+        "name": "Ovo",
+        "price": "+ R$ 2,00",
+        "status": "Exibida"
+      },
+      {
+        "name": "Bacon",
+        "price": "+ R$ 3,50",
+        "status": "Exibida"
+      },
+      {
+        "name": "Ervilha",
+        "price": "+ R$ 1,50",
+        "status": "Exibida"
+      },
+      {
+        "name": "Azeitona",
+        "price": "+ R$ 2,00",
+        "status": "Exibida"
+      },
+      {
+        "name": "Hambúrguer Artesanal 200g",
+        "price": "+ R$ 11,00",
+        "status": "Exibida"
+      },
+      {
+        "name": "Calabresa",
+        "price": "+ R$ 3,50",
+        "status": "Exibida"
+      },
+      {
+        "name": "Salsicha",
+        "price": "+ R$ 2,00",
+        "status": "Exibida"
+      },
+      {
+        "name": "Queijo Minas Frescal",
+        "price": "+ R$ 4,50",
+        "status": "Exibida"
+      },
+      {
+        "name": "Tomate",
+        "price": "+ R$ 3,00",
+        "status": "Exibida"
+      },
+      {
+        "name": "Catupiry Original",
+        "price": "+ R$ 5,00",
+        "status": "Exibida"
+      },
+      {
+        "name": "Cheddar Original Catupiry",
+        "price": "+ R$ 5,00",
+        "status": "Exibida"
+      },
+      {
+        "name": "Filé de Frango",
+        "price": "+ R$ 5,00",
+        "status": "Exibida"
+      },
+      {
+        "name": "Cebola Refogada",
+        "price": "+ R$ 1,50",
+        "status": "Exibida"
+      },
+      {
+        "name": "Milho",
+        "price": "+ R$ 1,50",
+        "status": "Exibida"
+      },
+      {
+        "name": "Porção de Vinagrete 80g",
+        "price": "+ R$ 3,00",
+        "status": "Exibida"
+      },
+      {
+        "name": "Palmito Picado",
+        "price": "+ R$ 3,50",
+        "status": "Exibida"
+      },
+      {
+        "name": "Batata Palha",
+        "price": "+ R$ 3,00",
+        "status": "Exibida"
+      }
+    ]
+  },
+  "G26": {
+    "id": "G26",
+    "title": "Escolha sua salada",
+    "rule": "Escolha 1 opção. Obrigatório.",
+    "options": [
+      {
+        "name": "Alface e tomate",
+        "price": "Sem acréscimo exibido",
+        "status": "Exibida"
+      },
+      {
+        "name": "Vinagrete",
+        "price": "Sem acréscimo exibido",
+        "status": "Exibida"
+      },
+      {
+        "name": "Sem salada",
+        "price": "Sem acréscimo exibido",
+        "status": "Exibida"
+      }
+    ]
+  },
+  "G27": {
+    "id": "G27",
+    "title": "Escolha seu Pão",
+    "rule": "Escolha até 1 opção. Opcional.",
+    "options": [
+      {
+        "name": "Pão de Hambúrguer",
+        "price": "Sem acréscimo exibido",
+        "status": "Exibida"
+      }
+    ]
+  },
+  "G28": {
+    "id": "G28",
+    "title": "Molhos",
+    "rule": "Escolha 1 opção. Obrigatório.",
+    "options": [
+      {
+        "name": "Molho verde de alho",
+        "price": "Sem acréscimo exibido",
+        "status": "Exibida"
+      },
+      {
+        "name": "Maionese Caseira",
+        "price": "Sem acréscimo exibido",
+        "status": "Exibida"
+      },
+      {
+        "name": "Molho Rose",
+        "price": "Sem acréscimo exibido",
+        "status": "Exibida"
+      },
+      {
+        "name": "Barbecue",
+        "price": "Sem acréscimo exibido",
+        "status": "Exibida"
+      },
+      {
+        "name": "Mostarda",
+        "price": "Sem acréscimo exibido",
+        "status": "Exibida"
+      },
+      {
+        "name": "Sem molho",
+        "price": "Sem acréscimo exibido",
+        "status": "Exibida"
+      },
+      {
+        "name": "Ketchup",
+        "price": "Sem acréscimo exibido",
+        "status": "Exibida"
+      }
+    ]
+  },
+  "G29": {
+    "id": "G29",
+    "title": "Escolha Um",
+    "rule": "Escolha 1 opção. Obrigatório.",
+    "options": [
+      {
+        "name": "BATATA FRITA",
+        "price": "Sem acréscimo exibido",
+        "status": "Exibida"
+      },
+      {
+        "name": "MANDIOCA",
+        "price": "Sem acréscimo exibido",
+        "status": "Exibida"
+      }
+    ]
+  },
+  "G30": {
+    "id": "G30",
+    "title": "Molhos adicionais",
+    "rule": "Escolha até 10 opções. Opcional.",
+    "options": [
+      {
+        "name": "Molho de alho verde",
+        "price": "+ R$ 4,00",
+        "status": "Exibida"
+      },
+      {
+        "name": "Maionese Caseira",
+        "price": "+ R$ 4,00",
+        "status": "Exibida"
+      },
+      {
+        "name": "Barbecue",
+        "price": "+ R$ 4,00",
+        "status": "Exibida"
+      },
+      {
+        "name": "Molho Rose",
+        "price": "+ R$ 4,00",
+        "status": "Exibida"
+      },
+      {
+        "name": "Mostarda",
+        "price": "+ R$ 4,00",
+        "status": "Exibida"
+      },
+      {
+        "name": "Ketchup",
+        "price": "+ R$ 4,00",
+        "status": "Exibida"
+      }
+    ]
+  },
+  "G31": {
+    "id": "G31",
+    "title": "Adicionais em cima da batata",
+    "rule": "Escolha até 19 opções. Opcional.",
+    "options": [
+      {
+        "name": "Calabresa",
+        "price": "+ R$ 5,50",
+        "status": "Exibida"
+      },
+      {
+        "name": "Catupiry",
+        "price": "+ R$ 7,50",
+        "status": "Exibida"
+      },
+      {
+        "name": "Cheddar",
+        "price": "+ R$ 7,50",
+        "status": "Exibida"
+      },
+      {
+        "name": "Ketchup",
+        "price": "+ R$ 2,00",
+        "status": "Exibida"
+      },
+      {
+        "name": "Maionese",
+        "price": "+ R$ 2,00",
+        "status": "Exibida"
+      },
+      {
+        "name": "Mostarda",
+        "price": "+ R$ 2,00",
+        "status": "Exibida"
+      },
+      {
+        "name": "Bacon",
+        "price": "+ R$ 7,50",
+        "status": "Exibida"
+      },
+      {
+        "name": "Mussarela",
+        "price": "+ R$ 6,00",
+        "status": "Exibida"
+      },
+      {
+        "name": "Frango desfiado",
+        "price": "+ R$ 5,00",
+        "status": "Exibida"
+      },
+      {
+        "name": "Molho de Alho",
+        "price": "+ R$ 3,50",
+        "status": "Exibida"
+      },
+      {
+        "name": "Barbecue",
+        "price": "+ R$ 2,50",
+        "status": "Exibida"
+      }
+    ]
+  },
+  "G32": {
+    "id": "G32",
+    "title": "Cheddar ou Catupiry",
+    "rule": "Escolha 1 opção. Obrigatório.",
+    "options": [
+      {
+        "name": "Cheddar",
+        "price": "Sem acréscimo exibido",
+        "status": "Exibida"
+      },
+      {
+        "name": "Catupiry",
+        "price": "Sem acréscimo exibido",
+        "status": "Exibida"
+      },
+      {
+        "name": "SEM CHEDDAR E SEM CATUPIRY",
+        "price": "Sem acréscimo exibido",
+        "status": "Exibida"
+      }
+    ]
+  },
+  "G33": {
+    "id": "G33",
+    "title": "adicional",
+    "rule": "Escolha até 1 opção. Opcional.",
+    "options": [
+      {
+        "name": "Mussarela",
+        "price": "+ R$ 15,00",
+        "status": "Exibida"
+      }
+    ]
+  },
+  "G34": {
+    "id": "G34",
+    "title": "Escolha os lanches do seu Combo Família",
+    "rule": "Escolha 4 opções. Obrigatório.",
+    "options": [
+      {
+        "name": "X-BURGUER",
+        "price": "Sem acréscimo exibido",
+        "status": "Exibida"
+      },
+      {
+        "name": "X-BURGUER",
+        "price": "Sem acréscimo exibido",
+        "status": "Exibida"
+      },
+      {
+        "name": "X-BURGUER",
+        "price": "Sem acréscimo exibido",
+        "status": "Exibida"
+      },
+      {
+        "name": "X-BURGUER",
+        "price": "Sem acréscimo exibido",
+        "status": "Exibida"
+      },
+      {
+        "name": "X-SALADA",
+        "price": "Sem acréscimo exibido",
+        "status": "Exibida"
+      },
+      {
+        "name": "X-SALADA",
+        "price": "Sem acréscimo exibido",
+        "status": "Exibida"
+      },
+      {
+        "name": "X-SALADA",
+        "price": "Sem acréscimo exibido",
+        "status": "Exibida"
+      },
+      {
+        "name": "X-SALADA",
+        "price": "Sem acréscimo exibido",
+        "status": "Exibida"
+      }
+    ]
+  },
+  "G35": {
+    "id": "G35",
+    "title": "Escolha seu Refrigerante",
+    "rule": "Escolha 1 opção. Obrigatório.",
+    "options": [
+      {
+        "name": "Coca 2 Litros",
+        "price": "Sem acréscimo exibido",
+        "status": "Exibida"
+      },
+      {
+        "name": "Sprite 2Litros",
+        "price": "Sem acréscimo exibido",
+        "status": "Exibida"
+      }
+    ]
+  },
+  "G36": {
+    "id": "G36",
+    "title": "Escolha seu lanche",
+    "rule": "Escolha 2 opções. Obrigatório.",
+    "options": [
+      {
+        "name": "X-Burguer",
+        "price": "Sem acréscimo exibido",
+        "status": "Exibida"
+      },
+      {
+        "name": "X-Burguer",
+        "price": "Sem acréscimo exibido",
+        "status": "Exibida"
+      },
+      {
+        "name": "X-Salada",
+        "price": "Sem acréscimo exibido",
+        "status": "Exibida"
+      },
+      {
+        "name": "X-Salada",
+        "price": "Sem acréscimo exibido",
+        "status": "Exibida"
+      }
+    ]
+  },
+  "G37": {
+    "id": "G37",
+    "title": "SABORES",
+    "rule": "Escolha de 1 a 7 opções. Obrigatório.",
+    "options": [
+      {
+        "name": "Goiaba",
+        "price": "R$ 13,00",
+        "status": "Exibida"
+      },
+      {
+        "name": "Laranja",
+        "price": "R$ 13,00",
+        "status": "Em falta"
+      }
+    ]
+  },
+  "G38": {
+    "id": "G38",
+    "title": "Sabores",
+    "rule": "Escolha 1 opção. Obrigatório.",
+    "options": [
+      {
+        "name": "Monster Energy",
+        "price": "R$ 13,00",
+        "status": "Exibida"
+      },
+      {
+        "name": "Monster Juice Mango locco",
+        "price": "R$ 13,00",
+        "status": "Exibida"
+      },
+      {
+        "name": "Monster Ultra Zero Açúcar",
+        "price": "R$ 13,00",
+        "status": "Exibida"
+      }
+    ]
+  },
+  "G39": {
+    "id": "G39",
+    "title": "sabor",
+    "rule": "Escolha 1 opção. Obrigatório.",
+    "options": [
+      {
+        "name": "Fanta Uva 350ml.",
+        "price": "R$ 6,50",
+        "status": "Exibida"
+      },
+      {
+        "name": "Fanta Maracujá 350ml",
+        "price": "R$ 6,50",
+        "status": "Exibida"
+      },
+      {
+        "name": "Fanta Laranja 350ml.",
+        "price": "R$ 6,50",
+        "status": "Exibida"
+      },
+      {
+        "name": "Fanta laranja 1,5L",
+        "price": "R$ 15,00",
+        "status": "Exibida"
+      }
+    ]
+  },
+  "G40": {
+    "id": "G40",
+    "title": "Tamanhos",
+    "rule": "Escolha de 1 a 14 opções. Obrigatório.",
+    "options": [
+      {
+        "name": "Coca 2 Litros",
+        "price": "R$ 19,00",
+        "status": "Exibida"
+      },
+      {
+        "name": "Coca 2 Litros Zero",
+        "price": "R$ 19,00",
+        "status": "Exibida"
+      },
+      {
+        "name": "Coca 600 ml",
+        "price": "R$ 9,50",
+        "status": "Exibida"
+      },
+      {
+        "name": "Coca 600ml Zero",
+        "price": "R$ 9,50",
+        "status": "Exibida"
+      },
+      {
+        "name": "Coca 350 ml",
+        "price": "R$ 6,50",
+        "status": "Exibida"
+      },
+      {
+        "name": "Coca 350ml Zero",
+        "price": "R$ 6,50",
+        "status": "Exibida"
+      },
+      {
+        "name": "Coca 250ml KS (Vidro)",
+        "price": "R$ 6,50",
+        "status": "Exibida"
+      },
+      {
+        "name": "Coca 250ml Zero KS (Vidro)",
+        "price": "R$ 6,50",
+        "status": "Exibida"
+      },
+      {
+        "name": "Coca 220ml",
+        "price": "R$ 4,50",
+        "status": "Exibida"
+      },
+      {
+        "name": "Coca 220ml Café",
+        "price": "R$ 4,50",
+        "status": "Exibida"
+      },
+      {
+        "name": "Coca 220ml Zero",
+        "price": "R$ 4,50",
+        "status": "Exibida"
+      }
+    ]
+  },
+  "G41": {
+    "id": "G41",
+    "title": "Com ou sem gás",
+    "rule": "Escolha de 1 a 12 opções. Obrigatório.",
+    "options": [
+      {
+        "name": "Com gás 510ml",
+        "price": "R$ 4,00",
+        "status": "Exibida"
+      },
+      {
+        "name": "Sem gás 510ml",
+        "price": "R$ 3,50",
+        "status": "Exibida"
+      }
+    ]
+  }
+}
