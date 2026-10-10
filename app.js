@@ -1393,10 +1393,6 @@
           <span style="font-size:0.72rem; text-transform:uppercase; color:var(--color-primary-burgundy);">${order.paymentMethod}</span>
         </div>
         <div class="kds-card-actions">
-          <button class="kds-btn-print" data-id="${order.id}" title="Imprimir Comanda Térmica (80mm)">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect width="12" height="8" x="6" y="14"></rect></svg>
-            Imprimir Comanda
-          </button>
           ${actionBtnText ? `
             <button class="kds-btn-action" data-id="${order.id}" data-next="${nextStatus}">
               ${actionBtnText} →
@@ -1406,6 +1402,10 @@
               Reabrir Pedido
             </button>
           ` : '')}
+          <button class="kds-btn-print" data-id="${order.id}" title="Imprimir Comanda Térmica (80mm)">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect width="12" height="8" x="6" y="14"></rect></svg>
+            Imprimir Comanda (80mm)
+          </button>
         </div>
       `;
       targetList.appendChild(card);
