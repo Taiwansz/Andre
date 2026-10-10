@@ -920,6 +920,266 @@
     }, 800);
   }
 
+  // ==========================================================================
+  // Impressão Térmica de Comandas (80mm / 58mm Standard ESC/POS)
+  // ==========================================================================
+  function printThermalOrder(orderId) {
+    const order = state.orders.find(o => o.id.toLowerCase() === orderId.toLowerCase().trim());
+    if (!order) {
+      showToast(`Pedido ${orderId} não localizado.`, 'Aviso');
+      return;
+    }
+
+    const container = document.getElementById('thermal-print-container');
+    if (!container) return;
+
+    const orderDate = new Date(order.timestamp || Date.now());
+    const dateStr = orderDate.toLocaleDateString('pt-BR');
+    const timeStr = orderDate.toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit' });
+    const isDelivery = order.deliveryType === 'delivery';
+    const courierLabel = order.courier || (isDelivery ? 'Aguardando Despacho' : 'Balcão / Retirada');
+
+    let cleanAddress = (order.address || '').replace(/MODALIDADE:[^\n]*\n?/gi, '').trim();
+
+    let itemsHtml = '';
+    order.items.forEach(item => {
+      const itemSubtotal = item.unitPrice * item.quantity;
+      itemsHtml += `
+        <tr>
+          <td class="thermal-col-qty">${item.quantity}x</td>
+          <td class="thermal-col-desc">
+            <div class="thermal-item-title">${escapeHtml(item.name)}</div>
+            ${item.options && item.options.length > 0 ? `
+              <div class="thermal-item-sub">
+                ${item.options.map(opt => `+ ${escapeHtml(opt.name)}${opt.extraPrice > 0 ? ` (${formatMoney(opt.extraPrice)})` : ''}`).join('<br>')}
+              </div>
+            ` : ''}
+            ${item.notes ? `<div class="thermal-item-note">OBS: ${escapeHtml(item.notes)}</div>` : ''}
+          </td>
+          <td class="thermal-col-val">${formatMoney(itemSubtotal)}</td>
+        </tr>
+      `;
+    });
+
+    container.innerHTML = `
+      <div class="thermal-slip">
+        <div class="thermal-center thermal-brand">ANDRÉ DA EMPADA</div>
+        <div class="thermal-center thermal-subtitle">EMPADAS ARTESANAIS • INDAIATUBA/SP</div>
+        <div class="thermal-center thermal-meta">Av. Geraldo Hackmann, 742 - Faria Lima</div>
+        <div class="thermal-center thermal-meta">Tel / WhatsApp: (19) 98949-0912</div>
+        <div class="thermal-center thermal-meta">CNPJ: 46.134.717/0001-27</div>
+        
+        <div class="thermal-line-double"></div>
+
+        <div class="thermal-highlight-box">
+          <div class="thermal-order-num">PEDIDO: ${order.id}</div>
+          <div class="thermal-order-badge-type">${isDelivery ? '*** ENTREGA DELIVERY ***' : '*** RETIRADA BALCÃO ***'}</div>
+        </div>
+
+        <div class="thermal-line-dashed"></div>
+
+        <div class="thermal-flex-row">
+          <span>EMISSÃO:</span>
+          <span>${dateStr} ${timeStr}</span>
+        </div>
+        <div class="thermal-flex-row">
+          <span>STATUS:</span>
+          <strong>${(order.status || 'RECEBIDO').toUpperCase()}</strong>
+        </div>
+        <div class="thermal-flex-row thermal-courier-row">
+          <span>DESPACHO:</span>
+          <span class="thermal-courier-val">${escapeHtml(courierLabel.toUpperCase())}</span>
+        </div>
+
+        <div class="thermal-line-double"></div>
+        <div class="thermal-section-heading">DADOS DO CLIENTE</div>
+        <div class="thermal-line-dashed"></div>
+
+        <div class="thermal-client-info">
+          <div><strong>CLIENTE:</strong> ${escapeHtml(order.customerName || 'Não informado')}</div>
+          <div><strong>TELEFONE:</strong> ${escapeHtml(order.customerPhone || 'Não informado')}</div>
+          ${isDelivery ? `
+            <div><strong>BAIRRO:</strong> ${escapeHtml(order.neighborhood || 'Indaiatuba')}</div>
+            <div><strong>ENDEREÇO:</strong> ${escapeHtml(cleanAddress || 'Conforme informado')}</div>
+          ` : `
+            <div><strong>LOCAL:</strong> Retirada no Balcão (Loja Faria Lima)</div>
+          `}
+        </div>
+
+        <div class="thermal-line-double"></div>
+        <div class="thermal-section-heading">ITENS DA COMANDA</div>
+        <div class="thermal-line-dashed"></div>
+
+        <table class="thermal-table">
+          <thead>
+            <tr>
+              <th class="thermal-col-qty">QTD</th>
+              <th class="thermal-col-desc">ITEM</th>
+              <th class="thermal-col-val">TOTAL</th>
+            </tr>
+          </thead>
+          <tbody>
+            ${itemsHtml}
+          </tbody>
+        </table>
+
+        <div class="thermal-line-dashed"></div>
+
+        <div class="thermal-totals-box">
+          <div class="thermal-flex-row">
+            <span>SUBTOTAL:</span>
+            <span>${formatMoney(order.subtotal || 0)}</span>
+          </div>
+          <div class="thermal-flex-row">
+            <span>TAXA ENTREGA:</span>
+            <span>${isDelivery ? formatMoney(order.deliveryFee || 0) : 'GRÁTIS'}</span>
+          </div>
+          ${(order.discount && order.discount > 0) ? `
+            <div class="thermal-flex-row">
+              <span>DESCONTO:</span>
+              <span>- ${formatMoney(order.discount)}</span>
+            </div>
+          ` : ''}
+          <div class="thermal-line-single"></div>
+          <div class="thermal-flex-row thermal-total-highlight">
+            <span>TOTAL:</span>
+            <span>${formatMoney(order.total || 0)}</span>
+          </div>
+          <div class="thermal-line-single"></div>
+          <div class="thermal-flex-row">
+            <span>PAGAMENTO:</span>
+            <strong>${(order.paymentMethod || 'PIX').toUpperCase()}</strong>
+          </div>
+        </div>
+
+        <div class="thermal-line-double"></div>
+
+        <div class="thermal-center thermal-footer-msg">
+          <div>FALA COMIGO! FEITA PRA VOCÊ.</div>
+          <div style="font-size:9px; margin-top:2px;">Receita de família • 100% Catupiry Original</div>
+        </div>
+
+        <div class="thermal-cut-line">- - - - - - - CORTE DA COMANDA - - - - - - -</div>
+      </div>
+    `;
+
+    window.print();
+    showToast(`Comanda ${order.id} enviada para impressão!`, 'Impressão');
+  }
+
+  // Impressão Térmica do Fechamento de Caixa / Turno (80mm)
+  function printThermalShiftReport() {
+    const container = document.getElementById('thermal-print-container');
+    if (!container) return;
+
+    const now = new Date();
+    const dateStr = now.toLocaleDateString('pt-BR');
+    const timeStr = now.toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit' });
+
+    const totalOrders = state.orders.length;
+    const totalRevenue = state.orders.reduce((sum, o) => sum + (o.total || 0), 0);
+    const avgTicket = totalOrders > 0 ? (totalRevenue / totalOrders) : 0;
+    const pixTotal = state.orders.filter(o => o.paymentMethod === 'pix').reduce((s, o) => s + o.total, 0);
+    const cardTotal = state.orders.filter(o => o.paymentMethod === 'cartao').reduce((s, o) => s + o.total, 0);
+    const cashTotal = state.orders.filter(o => o.paymentMethod === 'dinheiro').reduce((s, o) => s + o.total, 0);
+    const deliveryFeeTotal = state.orders.reduce((s, o) => s + (o.deliveryFee || 0), 0);
+
+    const courierStats = {};
+    state.orders.forEach(o => {
+      const c = o.courier || (o.deliveryType === 'retirada' ? 'Balcão / Retirada' : 'Aguardando Despacho');
+      courierStats[c] = (courierStats[c] || 0) + 1;
+    });
+
+    let couriersHtml = '';
+    Object.entries(courierStats).forEach(([name, count]) => {
+      couriersHtml += `
+        <div class="thermal-flex-row">
+          <span>${escapeHtml(name)}:</span>
+          <strong>${count} pedido(s)</strong>
+        </div>
+      `;
+    });
+
+    container.innerHTML = `
+      <div class="thermal-slip">
+        <div class="thermal-center thermal-brand">ANDRÉ DA EMPADA</div>
+        <div class="thermal-center thermal-subtitle">FECHAMENTO DE CAIXA / TURNO</div>
+        <div class="thermal-center thermal-meta">Av. Geraldo Hackmann, 742 - Indaiatuba/SP</div>
+        <div class="thermal-center thermal-meta">CNPJ: 46.134.717/0001-27</div>
+
+        <div class="thermal-line-double"></div>
+
+        <div class="thermal-flex-row">
+          <span>EMISSÃO:</span>
+          <span>${dateStr} ${timeStr}</span>
+        </div>
+        <div class="thermal-flex-row">
+          <span>TURNO:</span>
+          <strong>FINALIZADO</strong>
+        </div>
+
+        <div class="thermal-line-double"></div>
+        <div class="thermal-section-heading">TOTAIS FINANCEIROS</div>
+        <div class="thermal-line-dashed"></div>
+
+        <div class="thermal-flex-row thermal-total-highlight">
+          <span>FATURAMENTO:</span>
+          <span>${formatMoney(totalRevenue)}</span>
+        </div>
+        <div class="thermal-flex-row">
+          <span>TOTAL DE COMANDAS:</span>
+          <strong>${totalOrders}</strong>
+        </div>
+        <div class="thermal-flex-row">
+          <span>TICKET MÉDIO:</span>
+          <span>${formatMoney(avgTicket)}</span>
+        </div>
+        <div class="thermal-flex-row">
+          <span>TAXAS DE ENTREGA:</span>
+          <span>${formatMoney(deliveryFeeTotal)}</span>
+        </div>
+
+        <div class="thermal-line-double"></div>
+        <div class="thermal-section-heading">RECEBIMENTO POR CANAL</div>
+        <div class="thermal-line-dashed"></div>
+
+        <div class="thermal-flex-row">
+          <span>PIX:</span>
+          <strong>${formatMoney(pixTotal)}</strong>
+        </div>
+        <div class="thermal-flex-row">
+          <span>CARTÃO (DÉB/CRÉD):</span>
+          <strong>${formatMoney(cardTotal)}</strong>
+        </div>
+        <div class="thermal-flex-row">
+          <span>DINHEIRO:</span>
+          <strong>${formatMoney(cashTotal)}</strong>
+        </div>
+
+        <div class="thermal-line-double"></div>
+        <div class="thermal-section-heading">DESPACHOS POR ENTREGADOR</div>
+        <div class="thermal-line-dashed"></div>
+
+        ${couriersHtml || '<div class="thermal-center">Nenhum despacho registrado</div>'}
+
+        <div class="thermal-line-double"></div>
+
+        <div class="thermal-center" style="margin-top:24px; padding-top:4px; border-top:1px solid #000; font-size:9.5px;">
+          ASSINATURA DO OPERADOR DE CAIXA
+        </div>
+
+        <div class="thermal-cut-line">- - - - - - - CORTE DO FECHAMENTO - - - - - - -</div>
+      </div>
+    `;
+
+    window.print();
+    showToast('Relatório de fechamento enviado para impressão!', 'Impressão');
+  }
+
+  // Exposição global das funções de impressão térmica
+  window.printThermalOrder = printThermalOrder;
+  window.printThermalShiftReport = printThermalShiftReport;
+
   // Rastreamento de Pedido em Tempo Real
   function openLiveTracker(orderId) {
     const modal = document.getElementById('live-tracker-modal');
@@ -958,13 +1218,16 @@
       return;
     }
 
+    const courierText = order.courier || (order.deliveryType === 'retirada' ? 'Balcão / Retirada' : 'Aguardando Despacho');
+    const timeFormatted = new Date(order.timestamp).toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit' });
+
     // Restaura estrutura do tracker se estiver com msg de erro
     if (!document.getElementById('step-recebido')) {
       contentBox.innerHTML = `
         <div class="tracker-order-badge" id="tracker-order-badge">
           <span id="tracker-order-id-label">Pedido: ${order.id}</span>
           <span>•</span>
-          <span id="tracker-order-time-label">Horário: ${new Date(order.timestamp).toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit' })}</span>
+          <span id="tracker-order-time-label">Horário: ${timeFormatted}</span>
         </div>
         <div class="tracker-timeline">
           <div class="tracker-step" id="step-recebido"><div class="tracker-step-dot">1</div><div class="tracker-step-title">Pedido Confirmado</div><div class="tracker-step-desc">Recebido pela cozinha do André e enviado para produção</div></div>
@@ -976,7 +1239,7 @@
       `;
     } else {
       if (badgeLabel) badgeLabel.textContent = `Pedido: ${order.id}`;
-      if (timeLabel) timeLabel.textContent = `Horário: ${new Date(order.timestamp).toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit' })}`;
+      if (timeLabel) timeLabel.textContent = `Horário: ${timeFormatted}`;
     }
 
     const stepRecebido = document.getElementById('step-recebido');
@@ -1014,12 +1277,28 @@
     if (summaryBox) {
       summaryBox.innerHTML = `
         <div style="font-weight:800; color:var(--color-primary-burgundy); margin-bottom:6px;">Resumo da Comanda:</div>
-        <div>${order.items.map(i => `${i.quantity}x ${i.name}`).join('<br>')}</div>
+        <div>${order.items.map(i => `${i.quantity}x ${escapeHtml(i.name)}`).join('<br>')}</div>
         <div style="margin-top:8px; border-top:1px solid var(--color-border); padding-top:6px; display:flex; justify-content:space-between; font-weight:700;">
           <span>Total:</span>
           <span>${formatMoney(order.total)}</span>
         </div>
+        <div style="margin-top:12px; padding-top:10px; border-top:1px dashed var(--color-border); display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px;">
+          <div style="font-size:0.80rem; color:var(--color-text-dark);">
+            ${order.deliveryType === 'delivery' ? `<strong>Entregador:</strong> ${escapeHtml(courierText)}` : '<strong>Modalidade:</strong> Retirada no Balcão'}
+          </div>
+          <button class="btn-print-tracker" data-id="${order.id}">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect width="12" height="8" x="6" y="14"></rect></svg>
+            Imprimir Comanda
+          </button>
+        </div>
       `;
+
+      const btnPrint = summaryBox.querySelector('.btn-print-tracker');
+      if (btnPrint) {
+        btnPrint.addEventListener('click', () => {
+          printThermalOrder(order.id);
+        });
+      }
     }
   }
 
@@ -1082,6 +1361,8 @@
       else if (st === 'pronto') { actionBtnText = 'Despachar / Balcão'; nextStatus = 'entrega'; }
       else if (st === 'entrega') { actionBtnText = 'Concluir Pedido'; nextStatus = 'finalizado'; }
 
+      const courier = order.courier || (order.deliveryType === 'retirada' ? 'Balcão / Retirada' : 'Aguardando Despacho');
+
       const card = document.createElement('div');
       card.className = 'kds-card';
       card.innerHTML = `
@@ -1089,22 +1370,43 @@
           <span class="kds-card-id">${order.id}</span>
           <span class="kds-card-time">${elapsedLabel}</span>
         </div>
-        <div style="font-weight:700; font-size:0.86rem; color:var(--color-text-dark);">${order.customerName}</div>
-        <div style="font-size:0.75rem; color:var(--color-text-muted);">${order.deliveryType === 'delivery' ? 'Delivery • ' + order.neighborhood : 'Retirada no Balcão'}</div>
+        <div style="font-weight:700; font-size:0.86rem; color:var(--color-text-dark);">${escapeHtml(order.customerName)}</div>
+        <div style="font-size:0.75rem; color:var(--color-text-muted);">${order.deliveryType === 'delivery' ? 'Delivery • ' + escapeHtml(order.neighborhood || 'Indaiatuba') : 'Retirada no Balcão'}</div>
+        
+        <div class="kds-card-courier">
+          <label class="kds-courier-label" for="courier-sel-${order.id}">Despacho / Motoboy:</label>
+          <select class="kds-courier-select" id="courier-sel-${order.id}" data-id="${order.id}">
+            <option value="Aguardando Despacho" ${courier === 'Aguardando Despacho' ? 'selected' : ''}>Aguardando Despacho</option>
+            <option value="Motoboy 1 (Marcos)" ${courier === 'Motoboy 1 (Marcos)' ? 'selected' : ''}>Motoboy 1 (Marcos)</option>
+            <option value="Motoboy 2 (Lucas)" ${courier === 'Motoboy 2 (Lucas)' ? 'selected' : ''}>Motoboy 2 (Lucas)</option>
+            <option value="Motoboy Terceirizado" ${courier === 'Motoboy Terceirizado' ? 'selected' : ''}>Motoboy Terceirizado</option>
+            <option value="iFood / Parceiro" ${courier === 'iFood / Parceiro' ? 'selected' : ''}>iFood / Parceiro</option>
+            <option value="Balcão / Retirada" ${courier === 'Balcão / Retirada' ? 'selected' : ''}>Balcão / Retirada</option>
+          </select>
+        </div>
+
         <div class="kds-card-items">
-          ${order.items.map(i => `• ${i.quantity}x ${i.name}`).join('\n')}
+          ${order.items.map(i => `• ${i.quantity}x ${escapeHtml(i.name)}`).join('\n')}
         </div>
         <div style="display:flex; justify-content:space-between; align-items:center; margin-top:4px; font-size:0.82rem; font-weight:800; border-top:1px solid var(--color-border-subtle); padding-top:6px;">
           <span>${formatMoney(order.total)}</span>
           <span style="font-size:0.72rem; text-transform:uppercase; color:var(--color-primary-burgundy);">${order.paymentMethod}</span>
         </div>
-        ${actionBtnText ? `
-          <div class="kds-card-actions">
+        <div class="kds-card-actions">
+          <button class="kds-btn-print" data-id="${order.id}" title="Imprimir Comanda Térmica (80mm)">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect width="12" height="8" x="6" y="14"></rect></svg>
+            Imprimir Comanda
+          </button>
+          ${actionBtnText ? `
             <button class="kds-btn-action" data-id="${order.id}" data-next="${nextStatus}">
               ${actionBtnText} →
             </button>
-          </div>
-        ` : ''}
+          ` : (st === 'finalizado' ? `
+            <button class="kds-btn-action" data-id="${order.id}" data-next="entrega" style="background:var(--color-bg-cream-dark); color:var(--color-primary-burgundy);">
+              Reabrir Pedido
+            </button>
+          ` : '')}
+        </div>
       `;
       targetList.appendChild(card);
     });
@@ -1123,9 +1425,13 @@
         const targetOrder = state.orders.find(o => o.id === orderId);
         if (targetOrder) {
           targetOrder.status = nextStatus;
+          if (nextStatus === 'entrega' && targetOrder.deliveryType === 'delivery' && targetOrder.courier === 'Aguardando Despacho') {
+            targetOrder.courier = 'Motoboy 1 (Marcos)';
+          }
           persistOrders();
           playNotificationAudio('advance');
           renderKDSKanban();
+          renderKDSShiftReport();
 
           // Atualiza tracker caso esteja aberto
           const trackerInput = document.getElementById('tracker-search-id');
@@ -1135,13 +1441,43 @@
         }
       });
     });
+
+    // Eventos de atribuição de motoboy / despacho
+    document.querySelectorAll('.kds-courier-select').forEach(sel => {
+      sel.addEventListener('change', (e) => {
+        const orderId = sel.getAttribute('data-id');
+        const targetOrder = state.orders.find(o => o.id === orderId);
+        if (targetOrder) {
+          targetOrder.courier = e.target.value;
+          persistOrders();
+          showToast(`Pedido ${orderId} despachado com ${targetOrder.courier}`, 'Despacho');
+          renderKDSShiftReport();
+
+          const trackerInput = document.getElementById('tracker-search-id');
+          if (trackerInput && trackerInput.value.trim().toUpperCase() === orderId.toUpperCase()) {
+            renderLiveTracker(orderId);
+          }
+        }
+      });
+    });
+
+    // Eventos dos botões de impressão de comanda térmica
+    document.querySelectorAll('.kds-btn-print').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const orderId = btn.getAttribute('data-id');
+        printThermalOrder(orderId);
+      });
+    });
   }
 
   // Simulação de Pedido de Teste para o Dono
   function simulateTestOrder() {
-    const testCustomers = ['Matheus Santos', 'Beatriz Lima', 'Thiago Rocha', 'Juliana Ramos'];
+    const testCustomers = ['Matheus Santos', 'Beatriz Lima', 'Thiago Rocha', 'Juliana Ramos', 'Andréia Costa'];
     const randomCustomer = testCustomers[Math.floor(Math.random() * testCustomers.length)];
     const orderId = '#AE-' + Math.floor(1000 + Math.random() * 9000);
+    const isDelivery = Math.random() > 0.35;
+    const couriers = ['Motoboy 1 (Marcos)', 'Motoboy 2 (Lucas)', 'Aguardando Despacho'];
+    const assignedCourier = isDelivery ? couriers[Math.floor(Math.random() * couriers.length)] : 'Balcão / Retirada';
 
     const testOrder = {
       id: orderId,
@@ -1149,18 +1485,19 @@
       timestamp: Date.now(),
       customerName: randomCustomer,
       customerPhone: '(19) 99888-7766',
-      deliveryType: Math.random() > 0.4 ? 'delivery' : 'retirada',
+      deliveryType: isDelivery ? 'delivery' : 'retirada',
+      courier: assignedCourier,
       neighborhood: 'Brigadeiro Faria Lima',
-      address: 'Av. Geraldo Hackmann, 100 - Indaiatuba/SP',
+      address: isDelivery ? 'Av. Geraldo Hackmann, 100 - Indaiatuba/SP' : 'Retirada no Balcão',
       items: [
         { name: 'Empada de Frango com Catupiry Original', quantity: 2, unitPrice: 8.5 },
         { name: 'Empada de Palmito Pupunha', quantity: 1, unitPrice: 8.5 },
         { name: 'Coca-Cola Original 350ml Lata', quantity: 1, unitPrice: 6.0 }
       ],
       subtotal: 31.5,
-      deliveryFee: 5.0,
+      deliveryFee: isDelivery ? 5.0 : 0,
       discount: 0,
-      total: 36.5,
+      total: isDelivery ? 36.5 : 31.5,
       paymentMethod: 'pix',
       status: 'recebido'
     };
@@ -1171,6 +1508,25 @@
     showToast(`Comanda de teste ${orderId} inserida no KDS!`, 'KDS Teste');
     renderKDSKanban();
     renderKDSShiftReport();
+  }
+
+  // Sincronização de Disponibilidade de Combos no Banner
+  function updateCombosAvailability() {
+    document.querySelectorAll('.combo-promo-card').forEach(card => {
+      const btn = card.querySelector('.btn-add-item');
+      if (!btn) return;
+      const prodName = btn.getAttribute('data-name');
+      const isPaused = state.pausedItems.has(prodName);
+      if (isPaused) {
+        card.classList.add('is-paused');
+        btn.disabled = true;
+        btn.textContent = 'Indisponível';
+      } else {
+        card.classList.remove('is-paused');
+        btn.disabled = false;
+        btn.textContent = 'Pedir Combo +';
+      }
+    });
   }
 
   // Gestão de Estoque (Pausa de Itens)
@@ -1218,6 +1574,7 @@
         persistPausedItems();
         renderKDSStock();
         renderProductsCatalog();
+        updateCombosAvailability();
       });
     });
   }
@@ -1249,21 +1606,38 @@
     const tbody = document.getElementById('shift-orders-tbody');
     if (!tbody) return;
 
-    tbody.innerHTML = state.orders.map(o => `
-      <tr>
-        <td style="font-family:var(--font-mono); font-weight:800; color:var(--color-primary-burgundy);">${o.id}</td>
-        <td>${new Date(o.timestamp).toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit' })}</td>
-        <td style="font-weight:700;">${o.customerName}</td>
-        <td>${o.deliveryType === 'delivery' ? 'Delivery' : 'Retirada'}</td>
-        <td style="text-transform:uppercase; font-size:0.75rem; font-weight:800;">${o.paymentMethod}</td>
-        <td style="font-weight:800;">${formatMoney(o.total)}</td>
-        <td>
-          <span style="background:${o.status === 'finalizado' ? '#DCFCE7' : '#FEF3C7'}; color:${o.status === 'finalizado' ? '#166534' : '#92400E'}; padding:2px 8px; border-radius:var(--radius-full); font-size:0.75rem; font-weight:700; text-transform:uppercase;">
-            ${o.status}
-          </span>
-        </td>
-      </tr>
-    `).join('');
+    tbody.innerHTML = state.orders.map(o => {
+      const courier = o.courier || (o.deliveryType === 'retirada' ? 'Balcão / Retirada' : 'Aguardando Despacho');
+      return `
+        <tr>
+          <td style="font-family:var(--font-mono); font-weight:800; color:var(--color-primary-burgundy);">${o.id}</td>
+          <td>${new Date(o.timestamp).toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit' })}</td>
+          <td style="font-weight:700;">${escapeHtml(o.customerName)}</td>
+          <td>${o.deliveryType === 'delivery' ? 'Delivery' : 'Retirada'}</td>
+          <td style="font-size:0.80rem; font-weight:600; color:var(--color-text-dark);">${escapeHtml(courier)}</td>
+          <td style="text-transform:uppercase; font-size:0.75rem; font-weight:800;">${o.paymentMethod}</td>
+          <td style="font-weight:800;">${formatMoney(o.total)}</td>
+          <td>
+            <span style="background:${o.status === 'finalizado' ? '#DCFCE7' : '#FEF3C7'}; color:${o.status === 'finalizado' ? '#166534' : '#92400E'}; padding:2px 8px; border-radius:var(--radius-full); font-size:0.75rem; font-weight:700; text-transform:uppercase;">
+              ${o.status}
+            </span>
+          </td>
+          <td>
+            <button class="kds-btn-table-print" data-id="${o.id}">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect width="12" height="8" x="6" y="14"></rect></svg>
+              Imprimir
+            </button>
+          </td>
+        </tr>
+      `;
+    }).join('');
+
+    tbody.querySelectorAll('.kds-btn-table-print').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const orderId = btn.getAttribute('data-id');
+        printThermalOrder(orderId);
+      });
+    });
   }
 
   // Inicialização e Event Listeners
@@ -1273,7 +1647,18 @@
 
     renderCategoryTabs();
     renderProductsCatalog();
+    updateCombosAvailability();
     updateCartUI();
+
+    // Vinculação dos botões de adicionar combo no banner
+    document.querySelectorAll('.combos-banner-section .btn-add-item').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const prodName = btn.getAttribute('data-name');
+        const catName = btn.getAttribute('data-cat') || 'Combos';
+        const prod = findProduct(catName, prodName);
+        if (prod) openProductModal(prod, catName);
+      });
+    });
 
     // Busca no Catálogo com Debounce
     const searchInput = document.getElementById('search-input');
@@ -1365,6 +1750,9 @@
 
     const btnSimulate = document.getElementById('btn-kds-simulate');
     if (btnSimulate) btnSimulate.addEventListener('click', simulateTestOrder);
+
+    const btnPrintShift = document.getElementById('btn-print-shift-report');
+    if (btnPrintShift) btnPrintShift.addEventListener('click', printThermalShiftReport);
 
     const kdsStockSearch = document.getElementById('kds-stock-search');
     if (kdsStockSearch) {
